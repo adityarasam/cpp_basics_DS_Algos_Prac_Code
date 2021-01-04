@@ -1,0 +1,14 @@
+
+
+
+
+ aCls* m = new aCls;
+
+calls a contructor but even after main ends its destructor is not called
+bcoz it is in heap memory someone needs to delete it
+
+aCls n
+
+
+calls constructor and then destructor when main ends
+

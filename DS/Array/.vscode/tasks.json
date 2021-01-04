@@ -1,0 +1,29 @@
+
+// USE THIS AS REFERENCE JSON FILE 
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compile and run",
+            "type": "shell",
+            "command": "",      //COMPILER----FILE_1-----FILE_2               
+            "args":["g++", "-g","-std=c++14","main.cpp","Array.cpp"],       //how to automatically run a.out
+            
+            "group": {
+                "kind": "build",    //test or none
+                "isDefault": true
+            }
+        }
+        
+    ]
+
+}
+
+
+
+/*IN TASKS WITHIN THE args TAG DEFINE YOUR COMPILER AND FILES 
+THAT NEEDS TO BE LINKED AT COMPILATION TIME, HERE main.cpp AND 
+Array.cpp */
+

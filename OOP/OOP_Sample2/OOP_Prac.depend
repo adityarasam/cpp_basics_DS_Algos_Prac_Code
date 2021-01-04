@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1532290095 source:/home/aditya/ADITYA/CPP Prac/OOP_Prac/main.cpp
+	<iostream>
+	<vector>
+

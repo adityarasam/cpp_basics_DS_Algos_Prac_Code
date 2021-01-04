@@ -1,0 +1,7 @@
+
+Declare the function in Interface/ header .h
+Define the function in implementation
+
+#inlude header in cpp(declaration) and main - Must be above every other directive
+
+Declare function in main before you call it

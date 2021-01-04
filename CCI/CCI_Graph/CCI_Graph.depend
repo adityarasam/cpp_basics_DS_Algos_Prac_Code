@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1532449973 source:/home/aditya/ADITYA/CPP Prac/CCI_Graph/main.cpp
+	<iostream>
+	<list>
+

@@ -1,0 +1,47 @@
+
+
+#ifndef ARRAYS_H_INCLUDED
+#define ARRAYS_H_INCLUDED
+
+#include <vector>
+bool hasDuplicates(vector<int> &arr)
+
+
+#endif // ARRAYS_H_INCLUDED
+
+
+
+
+
+
+
+#include "Arrays.h"
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+bool hasDuplicates(vector<int> &arr)
+{
+    vector<int> :: iterator itr;
+    vector<int> :: iterator itr_1;
+    int cntr=0;
+
+    for(itr = arr.begin(); itr != arr.end();++itr)
+    {
+        for(itr_1 = itr; itr_1 != arr.end();++itr_1)
+        {
+            if (*itr==*itr_1)
+            {
+                cntr += 1;
+            }
+        }
+    }
+
+    cout<< cntr<<endl;
+
+    return false;
+
+}
+
+

@@ -1,0 +1,143 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+class SLL_Node {
+    public:
+        int data;						// Member Variables as in structure
+        SLL_Node *next;
+
+        SLL_Node(int node_data) {			// Constructer to be used when allocating a memory using new
+            this->data = node_data;
+            this->next = nullptr;
+        }
+};
+
+
+
+class SinglyLinkedList {
+    public:
+        SLL_Node *head;				// Member variables
+        SLL_Node *tail;
+
+        SinglyLinkedList() {					// Constructer
+            this->head = nullptr;
+            this->tail = nullptr;
+        }
+
+        void insert_node(int node_data) {
+            SLL_Node* node = new SLL_Node(node_data);
+
+            if (!this->head) {
+                this->head = node;
+            } else {
+                this->tail->next = node;
+            }
+
+            this->tail = node;
+        }
+};
+
+void print_singly_linked_list(SLL_Node* node, string sep, ofstream& fout) {
+    while (node) {
+        fout << node->data;
+
+        node = node->next;
+
+        if (node) {
+            fout << sep;
+        }
+    }
+}
+
+void free_singly_linked_list(SLL_Node* node) {
+    while (node) {
+        SLL_Node* temp = node;
+        node = node->next;
+
+        free(temp);
+    }
+}
+
+
+// Complete the insertNodeAtPosition function below.
+
+/*
+ * For your reference:
+ *
+ * SLL_Node {
+ *     int data;
+ *     SLL_Node* next;
+ * };
+ *
+ */
+SLL_Node* insertNodeAtPosition(SLL_Node* head, int data, int position) {
+    
+    SLL_Node* runner_node = head;
+    SLL_Node* new_node = new SLL_Node(data);
+    
+    if (position == 0)
+    {
+        
+        new_node->next = head;
+        head = new_node;
+        return head;
+    }
+    else
+    {
+    for(int i=0; i<position-1; i++)
+    {
+        runner_node = runner_node->next;
+        //cout<<runner_node->data<<endl;
+    }
+    
+    new_node->next = runner_node->next;
+    new_node->data = data;
+    runner_node->next = new_node; 
+    
+    return head;
+    }
+
+}
+
+
+int main()
+{
+    ofstream fout(getenv("OUTPUT_PATH"));
+
+    SinglyLinkedList* llist = new SinglyLinkedList();
+
+    int llist_count;
+    cin >> llist_count;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+    for (int i = 0; i < llist_count; i++) {
+        int llist_item;
+        cin >> llist_item;
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+        llist->insert_node(llist_item);
+    }
+
+    int data;
+    cin >> data;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+    int position;
+    cin >> position;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+    SLL_Node* llist_head = insertNodeAtPosition(llist->head, data, position);
+
+    print_singly_linked_list(llist_head, " ", fout);
+    fout << "\n";
+
+    free_singly_linked_list(llist_head);
+
+    fout.close();
+
+    return 0;
+}
+
+
+

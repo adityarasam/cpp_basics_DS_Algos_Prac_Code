@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1535821291 source:/home/aditya/ADITYA/CPP Prac/ArraysStrings/Array.cpp
+	"Array.h"
+
+1535821291 /home/aditya/ADITYA/CPP Prac/ArraysStrings/Array.h
+	<string>
+	<iostream>
+	<string>
+	<unordered_set>
+
+1535821253 source:/home/aditya/ADITYA/CPP Prac/ArraysStrings/main.cpp
+	"Array.h"
+
